@@ -21,7 +21,7 @@ def transform_data(data,l):
             bit = ''.join(bit)
             bit = bit.zfill(8)
             res_tmp.append(bit)
-        tmp = [int(hex, 2) for hex in tmp]
+        tmp = [int(hex, 2) for hex in res_tmp]
         tmp = tmp[:length]
         res.append(tmp)
         tmp = []
