@@ -325,7 +325,7 @@ class MixTemporalGNN(nn.Module):
         subgraph_hetro_cl_loss = self.supcl_g(torch.cat((F.normalize(temp_src[mask_src_subgraph], p=2).unsqueeze(1), F.normalize(temp_subgraph[mask_src_subgraph], p=2).unsqueeze(1)), dim=1), hetro_label[mask_src_subgraph])
         feat_hetro_cl_loss = self.supcl_g(torch.cat((F.normalize(temp_src[mask_src_feat], p=2).unsqueeze(1), F.normalize(temp_feat[mask_src_feat], p=2).unsqueeze(1)), dim=1), hetro_label[mask_src_feat])
         
-        graph_cl_loss =  feat_hetro_cl_loss + feat_hetro_cl_loss
+        graph_cl_loss =  feat_hetro_cl_loss + subgraph_hetro_cl_loss
 
         return graph_cl_loss,hetro_gcn_out,hetro_mask,subgraph_aug_hetro_gcn_out    
     
@@ -397,3 +397,4 @@ class MixTemporalGNN(nn.Module):
 
 if __name__ == '__main__':
     pass
+
