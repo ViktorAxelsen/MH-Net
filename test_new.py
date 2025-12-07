@@ -5,7 +5,7 @@ from dgl.dataloading import GraphDataLoader
 from sklearn.metrics import classification_report
 
 from dataloader import MixTrafficFlowDataset4DGL
-from model_new_aug_final import MixTemporalGNN
+from model_new_aug import MixTemporalGNN
 from utils import set_seed, get_device, mix_collate_cl_fn
 from config import *
 
